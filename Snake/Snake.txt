@@ -1,0 +1,1 @@
+Debug/utils_input.c.o Debug/utils_display.c.o Debug/tempalte.c.o Debug/startup.c.o
