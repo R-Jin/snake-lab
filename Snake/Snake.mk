@@ -13,7 +13,7 @@ CurrentFileName        :=
 CurrentFilePath        :=
 CurrentFileFullPath    :=
 User                   :=Ryan Jin
-Date                   :=16/05/22
+Date                   :=17/05/22
 CodeLitePath           :=/home/bottle/.codelite
 LinkerName             :=/usr/share/codelite/tools/gcc-arm/bin/arm-none-eabi-g++
 SharedObjectLinkerName :=/usr/share/codelite/tools/gcc-arm/bin/arm-none-eabi-g++ -shared -fPIC
@@ -66,7 +66,7 @@ ARM_M4SFPLIB:=$(CodeLiteDir)/tools/gcc-arm/arm-none-eabi/lib/thumb/v7e-m+fp/soft
 ARM_GCC_M4SFPLIB:=$(CodeLiteDir)/tools/gcc-arm/lib/gcc/arm-none-eabi/9.2.1/thumb/v7e-m+fp/softfp
 ARM_M4HFPLIB:=$(CodeLiteDir)/tools/gcc-arm/arm-none-eabi/lib/thumb/v7e-m+fp/hard
 ARM_GCC_M4HFPLIB:=$(CodeLiteDir)/tools/gcc-arm/lib/gcc/arm-none-eabi/9.2.1/thumb/v7e-m+fp/hard
-Objects0=$(IntermediateDirectory)/utils_input.c$(ObjectSuffix) $(IntermediateDirectory)/utils_display.c$(ObjectSuffix) $(IntermediateDirectory)/tempalte.c$(ObjectSuffix) $(IntermediateDirectory)/startup.c$(ObjectSuffix) 
+Objects0=$(IntermediateDirectory)/utils_display.c$(ObjectSuffix) $(IntermediateDirectory)/utils_input.c$(ObjectSuffix) $(IntermediateDirectory)/structs_sprite.c$(ObjectSuffix) $(IntermediateDirectory)/utils_delay.c$(ObjectSuffix) $(IntermediateDirectory)/structs_snake.c$(ObjectSuffix) $(IntermediateDirectory)/startup.c$(ObjectSuffix) 
 
 
 
@@ -103,23 +103,35 @@ PreBuild:
 ##
 ## Objects
 ##
-$(IntermediateDirectory)/utils_input.c$(ObjectSuffix): utils/input.c
-	@$(CC) $(CFLAGS) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/utils_input.c$(ObjectSuffix) -MF$(IntermediateDirectory)/utils_input.c$(DependSuffix) -MM utils/input.c
-	$(CC) $(SourceSwitch) "/home/bottle/code/mop/codelite/Snake/Snake/utils/input.c" $(CFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/utils_input.c$(ObjectSuffix) $(IncludePath)
-$(IntermediateDirectory)/utils_input.c$(PreprocessSuffix): utils/input.c
-	$(CC) $(CFLAGS) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/utils_input.c$(PreprocessSuffix) utils/input.c
-
 $(IntermediateDirectory)/utils_display.c$(ObjectSuffix): utils/display.c
 	@$(CC) $(CFLAGS) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/utils_display.c$(ObjectSuffix) -MF$(IntermediateDirectory)/utils_display.c$(DependSuffix) -MM utils/display.c
 	$(CC) $(SourceSwitch) "/home/bottle/code/mop/codelite/Snake/Snake/utils/display.c" $(CFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/utils_display.c$(ObjectSuffix) $(IncludePath)
 $(IntermediateDirectory)/utils_display.c$(PreprocessSuffix): utils/display.c
 	$(CC) $(CFLAGS) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/utils_display.c$(PreprocessSuffix) utils/display.c
 
-$(IntermediateDirectory)/tempalte.c$(ObjectSuffix): tempalte.c
-	@$(CC) $(CFLAGS) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/tempalte.c$(ObjectSuffix) -MF$(IntermediateDirectory)/tempalte.c$(DependSuffix) -MM tempalte.c
-	$(CC) $(SourceSwitch) "/home/bottle/code/mop/codelite/Snake/Snake/tempalte.c" $(CFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/tempalte.c$(ObjectSuffix) $(IncludePath)
-$(IntermediateDirectory)/tempalte.c$(PreprocessSuffix): tempalte.c
-	$(CC) $(CFLAGS) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/tempalte.c$(PreprocessSuffix) tempalte.c
+$(IntermediateDirectory)/utils_input.c$(ObjectSuffix): utils/input.c
+	@$(CC) $(CFLAGS) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/utils_input.c$(ObjectSuffix) -MF$(IntermediateDirectory)/utils_input.c$(DependSuffix) -MM utils/input.c
+	$(CC) $(SourceSwitch) "/home/bottle/code/mop/codelite/Snake/Snake/utils/input.c" $(CFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/utils_input.c$(ObjectSuffix) $(IncludePath)
+$(IntermediateDirectory)/utils_input.c$(PreprocessSuffix): utils/input.c
+	$(CC) $(CFLAGS) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/utils_input.c$(PreprocessSuffix) utils/input.c
+
+$(IntermediateDirectory)/structs_sprite.c$(ObjectSuffix): structs/sprite.c
+	@$(CC) $(CFLAGS) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/structs_sprite.c$(ObjectSuffix) -MF$(IntermediateDirectory)/structs_sprite.c$(DependSuffix) -MM structs/sprite.c
+	$(CC) $(SourceSwitch) "/home/bottle/code/mop/codelite/Snake/Snake/structs/sprite.c" $(CFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/structs_sprite.c$(ObjectSuffix) $(IncludePath)
+$(IntermediateDirectory)/structs_sprite.c$(PreprocessSuffix): structs/sprite.c
+	$(CC) $(CFLAGS) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/structs_sprite.c$(PreprocessSuffix) structs/sprite.c
+
+$(IntermediateDirectory)/utils_delay.c$(ObjectSuffix): utils/delay.c
+	@$(CC) $(CFLAGS) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/utils_delay.c$(ObjectSuffix) -MF$(IntermediateDirectory)/utils_delay.c$(DependSuffix) -MM utils/delay.c
+	$(CC) $(SourceSwitch) "/home/bottle/code/mop/codelite/Snake/Snake/utils/delay.c" $(CFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/utils_delay.c$(ObjectSuffix) $(IncludePath)
+$(IntermediateDirectory)/utils_delay.c$(PreprocessSuffix): utils/delay.c
+	$(CC) $(CFLAGS) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/utils_delay.c$(PreprocessSuffix) utils/delay.c
+
+$(IntermediateDirectory)/structs_snake.c$(ObjectSuffix): structs/snake.c
+	@$(CC) $(CFLAGS) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/structs_snake.c$(ObjectSuffix) -MF$(IntermediateDirectory)/structs_snake.c$(DependSuffix) -MM structs/snake.c
+	$(CC) $(SourceSwitch) "/home/bottle/code/mop/codelite/Snake/Snake/structs/snake.c" $(CFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/structs_snake.c$(ObjectSuffix) $(IncludePath)
+$(IntermediateDirectory)/structs_snake.c$(PreprocessSuffix): structs/snake.c
+	$(CC) $(CFLAGS) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/structs_snake.c$(PreprocessSuffix) structs/snake.c
 
 $(IntermediateDirectory)/startup.c$(ObjectSuffix): startup.c
 	@$(CC) $(CFLAGS) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/startup.c$(ObjectSuffix) -MF$(IntermediateDirectory)/startup.c$(DependSuffix) -MM startup.c

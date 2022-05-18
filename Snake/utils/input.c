@@ -1,3 +1,5 @@
+#include "input.h"
+
 #define GPIO_D_BASE     0x40020C00
 #define GPIO_D_MODER    ((unsigned long *) (GPIO_D_BASE))
 #define GPIO_D_OTYPER   ((unsigned short *) (GPIO_D_BASE + 4))

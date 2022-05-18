@@ -1,1 +1,1 @@
-Debug/utils_input.c.o Debug/utils_display.c.o Debug/tempalte.c.o Debug/startup.c.o
+Debug/utils_display.c.o Debug/utils_input.c.o Debug/structs_sprite.c.o Debug/utils_delay.c.o Debug/structs_snake.c.o Debug/startup.c.o

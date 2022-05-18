@@ -132,8 +132,16 @@ monitor restart</PostConnectCommands>
     </Configuration>
   </Settings>
   <VirtualDirectory Name="src">
-    <File Name="tempalte.c"/>
+    <VirtualDirectory Name="structs">
+      <File Name="structs/snake.h"/>
+      <File Name="structs/snake.c"/>
+      <File Name="structs/sprite.h"/>
+      <File Name="structs/sprite.c"/>
+      <File Name="structs/graphics.h"/>
+    </VirtualDirectory>
     <VirtualDirectory Name="utils">
+      <File Name="utils/delay.h"/>
+      <File Name="utils/delay.c"/>
       <File Name="utils/input.h"/>
       <File Name="utils/input.c"/>
       <File Name="utils/display.h"/>
